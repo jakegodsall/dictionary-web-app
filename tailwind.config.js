@@ -16,6 +16,9 @@ module.exports = {
                 secondary: 'var(--color-text-secondary)',
                 accent: 'var(--color-text-accent)',
             },
+            fontFamily: {
+                primary: 'var(--default-font-family)',
+            },
         },
     },
     plugins: [],

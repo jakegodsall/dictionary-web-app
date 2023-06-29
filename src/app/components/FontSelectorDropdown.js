@@ -15,7 +15,7 @@ const FontSelectorDropdown = () => {
 
         const val = e.target.innerHTML;
 
-        setFont(val);
+        setFont(map[val]);
     };
 
     return (

@@ -1,6 +1,18 @@
 :root {
 }
 
+.mono {
+    --default-font-family: monospace;
+}
+
+.serif {
+    --default-font-family: serif;
+}
+
+.sans {
+    --default-font-family: sans-serif;
+}
+
 .dark {
     --color-text-primary: #fff;
     --color-text-secondary: #757575;
