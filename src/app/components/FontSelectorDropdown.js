@@ -19,7 +19,7 @@ const FontSelectorDropdown = () => {
     };
 
     return (
-        <div className='absolute top-8 -left-8 p-6 w-[12rem] rounded-lg shadow-xl'>
+        <div className='absolute z-10 top-8 -left-8 p-6 w-[12rem] rounded-lg shadow-xl'>
             <ul>
                 <li
                     onClick={onClickHandler}
