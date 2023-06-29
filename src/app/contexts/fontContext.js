@@ -2,10 +2,24 @@
 
 import { createContext, useEffect, useState } from 'react';
 
+// get font preference from localStorage
+const getFontPreference = () => {
+    // make sure that the script is run in the browser
+    if (typeof window !== 'undefined') {
+        const font = localStorage.getItem('font');
+
+        if (typeof font === 'string') {
+            return font;
+        }
+    }
+
+    return 'sans';
+};
+
 export const FontContext = createContext();
 
 export const FontProvider = ({ children }) => {
-    const [font, setFont] = useState('sans');
+    const [font, setFont] = useState(getFontPreference);
 
     const rawSetFont = (font) => {
         const root = window.document.documentElement;
@@ -15,6 +29,8 @@ export const FontProvider = ({ children }) => {
         root.classList.remove('mono');
         root.classList.add(font);
     };
+
+    localStorage.setItem('font', font);
 
     useEffect(() => {
         rawSetFont(font);
