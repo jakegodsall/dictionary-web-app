@@ -10,7 +10,7 @@ import ArrowDown from '../../../public/images/icon-arrow-down.svg';
 import FontSelectorDropdown from './FontSelectorDropdown';
 
 const FontSelector = () => {
-    const [showDropdown, setShowDropdown] = useState(true);
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const { font, setFont } = useContext(FontContext);
 

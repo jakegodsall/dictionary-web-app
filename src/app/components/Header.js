@@ -12,6 +12,7 @@ const Header = () => {
             <Image src={Logo} alt='logo' />
             <div className='flex items-center justify-between gap-4'>
                 <FontSelector />
+                <div className='w-[1px] h-[2rem] bg-[#E9E9E9]'></div>
                 <div className='flex items-center justify-between gap-4'>
                     <Toggle />
                     <Image src={Moon} alt='moon' className='h-[1.25rem]' />
