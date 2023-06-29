@@ -18,7 +18,7 @@ const getFontPreference = () => {
 
 export const FontContext = createContext();
 
-export const FontProvider = ({ children }) => {
+export const FontProvider = ({ initialFont, children }) => {
     const [font, setFont] = useState(getFontPreference);
 
     const rawSetFont = (font) => {
@@ -28,9 +28,13 @@ export const FontProvider = ({ children }) => {
         root.classList.remove('serif');
         root.classList.remove('mono');
         root.classList.add(font);
+
+        localStorage.setItem('font', font);
     };
 
-    localStorage.setItem('font', font);
+    if (initialFont) {
+        rawSetFont(initialFont);
+    }
 
     useEffect(() => {
         rawSetFont(font);

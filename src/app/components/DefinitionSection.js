@@ -1,7 +1,9 @@
-import React from 'react';
+'use client';
+
+import { useEffect } from 'react';
 
 const getData = async () => {
-    const res = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello');
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/bore`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data');
@@ -10,10 +12,17 @@ const getData = async () => {
     return res.json();
 };
 
-const DefinitionSection = async () => {
-    const data = await getData();
+const DefinitionSection = async ({ input }) => {
+    useEffect(() => {
+        console.log('useEffect was called');
+        const data = getData();
 
-    console.log(data);
+        console.log(data);
+    }, [input]);
+
+    // const data = await getData();
+
+    // console.log(data);
 
     return <div>Test</div>;
 };
