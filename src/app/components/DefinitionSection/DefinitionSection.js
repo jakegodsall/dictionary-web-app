@@ -1,8 +1,6 @@
 import MeaningSection from './MeaningSection';
 
 const DefinitionSection = ({ data }) => {
-    console.log('from definition', data);
-
     // const meanings = data[0].meanings;
 
     const testWord = {
@@ -74,11 +72,15 @@ const DefinitionSection = ({ data }) => {
         sourceUrls: ['https://en.wiktionary.org/wiki/keyboard'],
     };
 
-    const meaning = testWord.meanings[0];
+    const meanings = testWord.meanings;
+
+    console.log(meanings);
 
     return (
         <div>
-            <MeaningSection meaning={meaning} />
+            {meanings.map((meaning, idx) => {
+                return <MeaningSection meaning={meaning} key={idx} />;
+            })}
         </div>
     );
 };
