@@ -74,7 +74,22 @@ const DefinitionSection = ({ data }) => {
 
     const meanings = testWord.meanings;
 
-    console.log(meanings);
+    const synonyms = [];
+    meanings.map((meaning) => {
+        meaning.synonyms.forEach((synonym) => {
+            synonyms.push(synonym);
+        });
+
+        meaning.definitions.forEach((definition) => {
+            console.log(definition);
+            definition.synonyms.forEach((synonym) => {
+                console.log(synonym);
+                synonyms.push(synonym);
+            });
+        });
+    });
+
+    console.log(synonyms);
 
     return (
         <div>
