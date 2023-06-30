@@ -5,7 +5,7 @@ import Image from 'next/image';
 import SearchIcon from '../../../public/images/icon-search.svg';
 
 const fetchData = async (input) => {
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/keyboard`);
     const data = await response.json();
 
     return data;

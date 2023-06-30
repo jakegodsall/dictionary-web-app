@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
-import DefinitionSection from './components/DefinitionSection';
+import DefinitionSection from './components/DefinitionSection/DefinitionSection';
 
 export default function Home() {
     const [apiData, setApiData] = useState('hello');
