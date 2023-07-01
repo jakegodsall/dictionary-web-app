@@ -1,4 +1,5 @@
 import MeaningSection from './MeaningSection';
+import TitleSection from './TitleSection';
 
 const DefinitionSection = ({ data }) => {
     // const meanings = data[0].meanings;
@@ -76,6 +77,7 @@ const DefinitionSection = ({ data }) => {
 
     return (
         <div>
+            <TitleSection word={testWord.word} />
             <div>
                 {meanings.map((meaning, idx) => {
                     return <MeaningSection meaning={meaning} key={idx} />;
