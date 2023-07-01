@@ -26,7 +26,7 @@ const SearchBar = ({ forwardData }) => {
             <input
                 type='text'
                 name='word'
-                className='p-[1.6rem] pl-[2.4rem] text-[1.6rem] rounded-2xl bg-[#F4F4F4] w-full sm:p-[2.2rem] sm:text-[2rem]'
+                className='outline-none p-[1.6rem] pl-[2.4rem] text-[1.6rem] rounded-2xl bg-[#F4F4F4] w-full sm:p-[2.2rem] sm:text-[2rem] focus:outline-[#A445ED]  focus:outline-[1px] dark:bg-[#1F1F1F]'
             />
             <button type='submit'>
                 <Image
