@@ -14,7 +14,7 @@ export default function Home() {
     };
 
     return (
-        <div className='w-full h-full bg-primary text-primary font-primary sm:px-[4rem]'>
+        <div className='w-full h-full bg-primary text-primary font-primary sm:px-[4rem] md:max-w-[736px] mx-auto'>
             <Header />
             <main className='mx-6 flex flex-col items-center'>
                 <SearchBar forwardData={apiDataHandler} />
