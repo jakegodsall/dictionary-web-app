@@ -75,21 +75,35 @@ const DefinitionSection = ({ data }) => {
     const meanings = testWord.meanings;
 
     const synonyms = [];
-    meanings.map((meaning) => {
-        meaning.synonyms.forEach((synonym) => {
+    const antonyms = [];
+
+    meanings.forEach((meaning) => {
+        console.log(meaning);
+        // get synonyms from "meaning" level
+        meaning.synonyms.map((synonym) => {
             synonyms.push(synonym);
         });
 
-        meaning.definitions.forEach((definition) => {
-            console.log(definition);
-            definition.synonyms.forEach((synonym) => {
-                console.log(synonym);
+        // get antonyms from "meaning" level
+        meaning.antonyms.map((antonym) => {
+            antonyms.push(antonym);
+        });
+
+        meaning.definitions.map((definition) => {
+            // get synonyms from definition level
+            definition.synonyms.map((synonym) => {
                 synonyms.push(synonym);
+            });
+
+            // get antonyms from definition level
+            definition.antonym.map((antonym) => {
+                antonyms.push(antonym);
             });
         });
     });
 
-    console.log(synonyms);
+    console.log(meanings);
+    console.log('synonyms', synonyms);
 
     return (
         <div>

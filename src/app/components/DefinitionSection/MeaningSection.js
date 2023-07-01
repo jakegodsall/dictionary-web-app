@@ -1,17 +1,7 @@
 import React from 'react';
 
 const MeaningSection = ({ meaning }) => {
-    const synonyms = [];
-    meaning.definitions.forEach((definition) => {
-        console.log(definition);
-        definition.synonyms.forEach((synonym) => {
-            console.log(synonym);
-            synonyms.push(synonym);
-        });
-    });
-
-    console.log(synonyms);
-
+    
     return (
         <div className='mb-8'>
             <div className='flex items-center gap-4 mb-8'>
