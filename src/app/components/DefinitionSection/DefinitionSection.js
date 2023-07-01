@@ -77,7 +77,7 @@ const DefinitionSection = ({ data }) => {
 
     return (
         <div>
-            <TitleSection word={testWord.word} />
+            <TitleSection word={testWord.word} phonetic={testWord.phonetic} />
             <div>
                 {meanings.map((meaning, idx) => {
                     return <MeaningSection meaning={meaning} key={idx} />;
