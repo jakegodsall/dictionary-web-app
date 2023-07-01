@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import DefinitionSection from './components/DefinitionSection/DefinitionSection';
+import NotFound from './components/NotFound';
 
 export default function Home() {
     const [apiData, setApiData] = useState('hello');
@@ -18,7 +19,8 @@ export default function Home() {
             <Header />
             <main className='mx-6 flex flex-col items-center'>
                 <SearchBar forwardData={apiDataHandler} />
-                <DefinitionSection data={apiData} />
+                {/* <DefinitionSection data={apiData} /> */}
+                <NotFound />
             </main>
         </div>
     );
