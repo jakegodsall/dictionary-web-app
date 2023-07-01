@@ -29,27 +29,44 @@ const MeaningSection = ({ meaning }) => {
     return (
         <div className='mb-8'>
             <div className='flex items-center gap-4 mb-8'>
-                <p className='italic font-bold'>{meaning.partOfSpeech}</p>
+                <p className='italic font-bold text-[1.8rem]'>{meaning.partOfSpeech}</p>
                 <div className='w-full h-[0.06rem] bg-[#E9E9E9]'></div>
             </div>
-            <p className='text-secondary mb-4 text-[1rem]'>Meaning</p>
-            <ul>
+            <p className='text-secondary mb-4 text-[1.6rem]'>Meaning</p>
+            <ul className='mb-10'>
                 {meaning.definitions.map((definition, idx) => {
                     return (
-                        <li key={idx} className='list-disc list-inside marker:text-accent'>
+                        <li
+                            key={idx}
+                            className='list-disc list-inside marker:text-accent text-[1.5rem]'
+                        >
                             {definition.definition}
                         </li>
                     );
                 })}
             </ul>
             {synonyms.length > 0 && (
-                <div className='flex gap-10'>
+                <div className='flex gap-10 text-[1.6rem]'>
                     <p className=''>Synonyms</p>
                     <ul>
                         {synonyms.map((synonym, idx) => {
                             return (
                                 <li key={idx} className='text-accent'>
                                     {synonym}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            )}
+            {antonyms.length > 0 && (
+                <div className='flex gap-10'>
+                    <p className=''>Synonyms</p>
+                    <ul>
+                        {antonyms.map((antonym, idx) => {
+                            return (
+                                <li key={idx} className='text-accent text-[1.6rem]'>
+                                    {antonym}
                                 </li>
                             );
                         })}
