@@ -33,14 +33,21 @@ const MeaningSection = ({ meaning }) => {
                 <div className='w-full h-[0.06rem] bg-[#E9E9E9]'></div>
             </div>
             <p className='text-secondary mb-4 text-[1.6rem]'>Meaning</p>
-            <ul className='mb-10'>
+            <ul className='mb-10 flex flex-col gap-[1.3rem]'>
                 {meaning.definitions.map((definition, idx) => {
+                    console.log(definition.example);
+
                     return (
                         <li
                             key={idx}
                             className='list-disc list-inside marker:text-accent text-[1.5rem]'
                         >
                             {definition.definition}
+                            {typeof definition.example !== 'undefined' && (
+                                <p className='text-secondary text-[1.5rem] mt-[1.3rem] ml-[2.3rem]'>
+                                    {`"${definition.example}"`}
+                                </p>
+                            )}
                         </li>
                     );
                 })}
