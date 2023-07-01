@@ -23,19 +23,19 @@ const FontSelectorDropdown = () => {
             <ul>
                 <li
                     onClick={onClickHandler}
-                    className='text-[1.125rem] cursor-pointer font-bold hover:text-accent'
+                    className='text-[1.4rem] cursor-pointer font-bold hover:text-accent sm:text-[1.8rem]'
                 >
                     Sans Serif
                 </li>
                 <li
                     onClick={onClickHandler}
-                    className='text-[1.125rem] cursor-pointer font-bold hover:text-accent font-serif'
+                    className='text-[1.4rem] cursor-pointer font-bold hover:text-accent font-serif sm:text-[1.8rem]'
                 >
                     Serif
                 </li>
                 <li
                     onClick={onClickHandler}
-                    className='text-[1.125rem] cursor-pointer font-bold hover:text-accent font-mono'
+                    className='text-[1.4rem] cursor-pointer font-bold hover:text-accent font-mono sm:text-[1.8rem]'
                 >
                     Mono
                 </li>

@@ -29,10 +29,14 @@ const MeaningSection = ({ meaning }) => {
     return (
         <div className='mb-8'>
             <div className='flex items-center gap-4 mb-8'>
-                <p className='italic font-bold text-[1.8rem]'>{meaning.partOfSpeech}</p>
+                <p className='italic font-bold text-[1.8rem] sm:text-[2.4rem] sm:italic'>
+                    {meaning.partOfSpeech}
+                </p>
                 <div className='w-full h-[0.06rem] bg-[#E9E9E9]'></div>
             </div>
-            <p className='text-secondary mb-4 text-[1.6rem]'>Meaning</p>
+            <p className='text-secondary mb-[1.6rem] text-[1.6rem] sm:text-[2rem] sm:mb-[2.7rem]'>
+                Meaning
+            </p>
             <ul className='mb-10 flex flex-col gap-[1.3rem]'>
                 {meaning.definitions.map((definition, idx) => {
                     console.log(definition.example);
@@ -40,11 +44,11 @@ const MeaningSection = ({ meaning }) => {
                     return (
                         <li
                             key={idx}
-                            className='list-disc list-inside marker:text-accent text-[1.5rem]'
+                            className='list-disc list-inside marker:text-accent text-[1.5rem] sm:text-[1.8rem]'
                         >
                             {definition.definition}
                             {typeof definition.example !== 'undefined' && (
-                                <p className='text-secondary text-[1.5rem] mt-[1.3rem] ml-[2.3rem]'>
+                                <p className='text-secondary text-[1.5rem] mt-[1.3rem] ml-[2.3rem] sm:text-[1.8rem]'>
                                     {`"${definition.example}"`}
                                 </p>
                             )}

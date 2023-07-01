@@ -32,8 +32,13 @@ const FontSelector = () => {
     }, [font]);
 
     return (
-        <div className='flex items-center justify-between gap-2 relative' onClick={onClickHandler}>
-            <p className='text-right w-20'>{fontText}</p>
+        <div
+            className='flex items-center justify-between gap-[2rem] relative'
+            onClick={onClickHandler}
+        >
+            <p className='text-[1.4rem] text-right w-[7rem] sm:text-[1.8rem] sm:w-[9rem]'>
+                {fontText}
+            </p>
             <Image src={ArrowDown} alt='arrow down' className='cursor-pointer' />
             {showDropdown && <FontSelectorDropdown />}
         </div>

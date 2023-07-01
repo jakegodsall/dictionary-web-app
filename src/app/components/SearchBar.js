@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-
 import SearchIcon from '../../../public/images/icon-search.svg';
 
 const fetchData = async (input) => {
@@ -24,14 +23,18 @@ const SearchBar = ({ forwardData }) => {
 
     return (
         <form className='w-full relative' onSubmit={onSubmitHandler}>
-            <input type='text' name='word' className='p-4 pl-6 rounded-2xl bg-[#F4F4F4] w-full ' />
+            <input
+                type='text'
+                name='word'
+                className='p-[1.6rem] pl-[2.4rem] text-[1.6rem] rounded-2xl bg-[#F4F4F4] w-full sm:p-[2.2rem] sm:text-[2rem]'
+            />
             <button type='submit'>
                 <Image
                     src={SearchIcon}
                     alt='magnifying glass'
                     width='16px'
                     height='16px'
-                    className='absolute right-4 top-4 w-[1.3rem] h-[1.3rem]'
+                    className='absolute right-[2.45rem] top-[1.8rem] w-[2rem] h-[2rem] sm:top-[2.5rem]'
                 />
             </button>
         </form>

@@ -8,9 +8,9 @@ import FontSelector from './FontSelector';
 
 const Header = () => {
     return (
-        <header className='flex items-center justify-between p-6'>
+        <header className='flex items-center justify-between p-6 mb-[2.4rem] sm:pt-[5.8rem] sm:pb-[5rem]'>
             <Image src={Logo} alt='logo' />
-            <div className='flex items-center justify-between gap-4'>
+            <div className='flex items-center justify-between gap-[1.6rem] sm:gap-[2.6rem]'>
                 <FontSelector />
                 <div className='w-[1px] h-[2rem] bg-[#E9E9E9]'></div>
                 <div className='flex items-center justify-between gap-4'>
