@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { AnimatePresence } from 'framer-motion';
+
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import DefinitionSection from './components/DefinitionSection/DefinitionSection';
@@ -15,7 +17,7 @@ export default function Home() {
     const apiDataHandler = (val) => {
         setIsInitial(false);
 
-        if (val.hasOwnProperty('title') && val.title === 'No Definitions Found') {
+        if (val === -1) {
             setIsFound(false);
         } else {
             setIsFound(true);
@@ -29,8 +31,10 @@ export default function Home() {
             <Header />
             <main className='mx-6 flex flex-col items-center'>
                 <SearchBar forwardData={apiDataHandler} />
-                {!isInitial && isFound && <DefinitionSection data={apiData} />}
-                {!isInitial && !isFound && <NotFound />}
+                <AnimatePresence>
+                    {!isInitial && isFound && <DefinitionSection data={apiData} />}
+                </AnimatePresence>
+                <AnimatePresence>{!isInitial && !isFound && <NotFound />}</AnimatePresence>
             </main>
         </div>
     );

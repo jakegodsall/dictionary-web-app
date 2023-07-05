@@ -4,8 +4,6 @@ import { Inter } from 'next/font/google';
 import { DarkModeProvider } from './contexts/themeContext';
 import { FontProvider } from './contexts/fontContext';
 
-import Favicon from '../../public/images/favicon-32x32.png';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
