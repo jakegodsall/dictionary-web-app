@@ -4,7 +4,12 @@ import PlayButton from './PlayButton';
 const TitleSection = ({ word, phonetic, phonetics }) => {
     console.log('from title', word);
 
-    const audioRef = phonetics[0].audio;
+    let audioRef = undefined;
+
+    if (typeof phonetics[0] !== 'undefined') {
+        audioRef = phonetics[0].audio;
+    } else {
+    }
 
     return (
         <div className='flex justify-between items-center my-[3.2rem]'>
@@ -12,7 +17,9 @@ const TitleSection = ({ word, phonetic, phonetics }) => {
                 <p className='text-[3.2rem] sm:text-[6.4rem]'>{word}</p>
                 <p className='text-[1.8rem] text-accent sm:text-[2.4rem]'>{phonetic}</p>
             </div>
-            {audioRef !== 'undefined' && audioRef.length > 0 && <PlayButton audioRef={audioRef} />}
+            {typeof audioRef !== 'undefined' && audioRef.length > 0 && (
+                <PlayButton audioRef={audioRef} />
+            )}
         </div>
     );
 };
