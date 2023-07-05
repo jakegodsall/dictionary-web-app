@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useContext, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import Image from 'next/image';
 
@@ -33,14 +34,14 @@ const FontSelector = () => {
 
     return (
         <div
-            className='flex items-center justify-between gap-[2rem] relative'
+            className='flex items-center justify-between gap-[2rem] relative cursor-pointer'
             onClick={onClickHandler}
         >
             <p className='text-[1.4rem] text-right w-[7rem] sm:text-[1.8rem] sm:w-[9rem]'>
                 {fontText}
             </p>
-            <Image src={ArrowDown} alt='arrow down' className='cursor-pointer' />
-            {showDropdown && <FontSelectorDropdown />}
+            <Image src={ArrowDown} alt='arrow down' className='' />
+            <AnimatePresence>{showDropdown && <FontSelectorDropdown />}</AnimatePresence>
         </div>
     );
 };
