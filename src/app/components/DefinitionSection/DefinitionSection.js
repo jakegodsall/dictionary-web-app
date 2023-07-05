@@ -10,11 +10,9 @@ const DefinitionSection = ({ data }) => {
     const meanings = word.meanings;
     const sources = word.sourceUrls;
 
-    console.log('meanings', meanings);
-
     return (
-        <div>
-            <TitleSection word={word.word} phonetic={word.phonetic} />
+        <main>
+            <TitleSection word={word.word} phonetic={word.phonetic} phonetics={word.phonetics} />
             <div>
                 {meanings.map((meaning, idx) => {
                     return <MeaningSection meaning={meaning} key={idx} />;
@@ -22,7 +20,7 @@ const DefinitionSection = ({ data }) => {
             </div>
             <div className='w-full h-[1px] bg-[#e9e9e9]'></div>
             <SourceSection sources={sources} />
-        </div>
+        </main>
     );
 };
 
