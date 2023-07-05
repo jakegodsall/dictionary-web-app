@@ -9,8 +9,15 @@ import NotFound from './components/NotFound';
 
 export default function Home() {
     const [apiData, setApiData] = useState('hello');
+    const [isFound, setIsFound] = useState();
 
     const apiDataHandler = (val) => {
+        if (val.hasOwnProperty('title') && val.title === 'No Definitions Found') {
+            setIsFound(false);
+        } else {
+            setIsFound(true);
+        }
+
         setApiData(val);
     };
 
@@ -19,8 +26,8 @@ export default function Home() {
             <Header />
             <main className='mx-6 flex flex-col items-center'>
                 <SearchBar forwardData={apiDataHandler} />
-                {/* <DefinitionSection data={apiData} /> */}
-                <NotFound />
+                {isFound && <DefinitionSection data={apiData} />}
+                {!isFound && <NotFound data={apiData} />}
             </main>
         </div>
     );
