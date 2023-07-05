@@ -14,17 +14,20 @@ const MeaningSection = ({ meaning }) => {
         antonyms.push(antonym);
     });
 
-    meaning.definitions.map((definition) => {
-        // get synonyms from definition level
-        definition.synonyms.map((synonym) => {
-            synonyms.push(synonym);
-        });
+    // meaning.definitions.map((definition) => {
+    //     // get synonyms from definition level
+    //     definition.synonyms.map((synonym) => {
+    //         synonyms.push(synonym);
+    //     });
 
-        // get antonyms from definition level
-        definition.antonyms.map((antonym) => {
-            antonyms.push(antonym);
-        });
-    });
+    //     // get antonyms from definition level
+    //     definition.antonyms.map((antonym) => {
+    //         antonyms.push(antonym);
+    //     });
+    // });
+
+    console.log('synonyms', synonyms);
+    console.log('antonyms', antonyms);
 
     return (
         <div className='mb-8'>
@@ -59,10 +62,10 @@ const MeaningSection = ({ meaning }) => {
             {synonyms.length > 0 && (
                 <div className='flex gap-10 text-[2rem]'>
                     <p className='dark:text-secondary'>Synonyms</p>
-                    <ul className='flex items-center gap-4'>
+                    <ul className='flex items-center gap-x-[2rem] flex-wrap'>
                         {synonyms.map((synonym, idx) => {
                             return (
-                                <li key={idx} className='text-accent'>
+                                <li key={idx} className='text-accent flex-shrink-0'>
                                     {synonym}
                                 </li>
                             );
@@ -73,10 +76,10 @@ const MeaningSection = ({ meaning }) => {
             {antonyms.length > 0 && (
                 <div className='flex gap-10 text-[2rem]'>
                     <p className='dark:text-secondary'>Antonyms</p>
-                    <ul className='flex items-center gap-4'>
+                    <ul className='flex items-center gap-x-[2rem] flex-wrap'>
                         {antonyms.map((antonym, idx) => {
                             return (
-                                <li key={idx} className='text-accent text-[1.6rem]'>
+                                <li key={idx} className='text-accent flex-shrink-0'>
                                     {antonym}
                                 </li>
                             );
