@@ -4,10 +4,19 @@ import Image from 'next/image';
 import SearchIcon from '../../../public/images/icon-search.svg';
 
 const fetchData = async (input) => {
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
-    const data = await response.json();
+    try {
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
 
-    return data;
+        if (response.ok) {
+            const data = await response.json();
+            return data;
+        } else {
+            throw new Error(response.status + ': Word Not Found');
+        }
+    } catch (error) {
+        console.error(error);
+        return -1;
+    }
 };
 
 const SearchBar = ({ forwardData }) => {
