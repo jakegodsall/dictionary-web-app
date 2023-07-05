@@ -2,8 +2,6 @@ import React from 'react';
 import PlayButton from './PlayButton';
 
 const TitleSection = ({ word, phonetic, phonetics }) => {
-    console.log('from title', word);
-
     let audioRef = undefined;
 
     if (typeof phonetics[0] !== 'undefined') {

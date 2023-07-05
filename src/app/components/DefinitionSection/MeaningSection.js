@@ -14,21 +14,6 @@ const MeaningSection = ({ meaning }) => {
         antonyms.push(antonym);
     });
 
-    // meaning.definitions.map((definition) => {
-    //     // get synonyms from definition level
-    //     definition.synonyms.map((synonym) => {
-    //         synonyms.push(synonym);
-    //     });
-
-    //     // get antonyms from definition level
-    //     definition.antonyms.map((antonym) => {
-    //         antonyms.push(antonym);
-    //     });
-    // });
-
-    console.log('synonyms', synonyms);
-    console.log('antonyms', antonyms);
-
     return (
         <div className='mb-8'>
             <div className='flex items-center gap-4 mb-8'>
@@ -42,8 +27,6 @@ const MeaningSection = ({ meaning }) => {
             </p>
             <ul className='mb-10 flex flex-col gap-[1.3rem]'>
                 {meaning.definitions.map((definition, idx) => {
-                    console.log(definition.example);
-
                     return (
                         <li
                             key={idx}

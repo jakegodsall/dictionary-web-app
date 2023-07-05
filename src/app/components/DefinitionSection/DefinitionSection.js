@@ -7,8 +7,6 @@ import TitleSection from './TitleSection';
 const DefinitionSection = ({ data }) => {
     const word = data[0];
 
-    console.log(word);
-
     const meanings = word.meanings;
     const sources = word.sourceUrls;
 
