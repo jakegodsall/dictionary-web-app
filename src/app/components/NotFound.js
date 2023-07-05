@@ -2,7 +2,7 @@ import { easeInOut, motion } from 'framer-motion';
 
 const NotFound = () => {
     return (
-        <motion.main
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -15,7 +15,7 @@ const NotFound = () => {
                 Sorry pal, we couldn&apos;t find definitions for the word you were looking for. You
                 can try the search again at later time or head to the web instead.
             </p>
-        </motion.main>
+        </motion.div>
     );
 };
 

@@ -13,11 +13,12 @@ const DefinitionSection = ({ data }) => {
     const sources = word.sourceUrls;
 
     return (
-        <motion.main
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: easeInOut }}
+            className='w-full'
         >
             <TitleSection word={word.word} phonetic={word.phonetic} phonetics={word.phonetics} />
             <div>
@@ -27,7 +28,7 @@ const DefinitionSection = ({ data }) => {
             </div>
             <div className='w-full h-[1px] bg-[#e9e9e9]'></div>
             <SourceSection sources={sources} />
-        </motion.main>
+        </motion.div>
     );
 };
 
