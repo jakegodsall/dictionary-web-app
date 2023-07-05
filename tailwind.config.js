@@ -19,6 +19,9 @@ module.exports = {
             fontFamily: {
                 primary: 'var(--default-font-family)',
             },
+            boxShadow: {
+                darkShadow: '0px 5px 30px 0px #A445ED',
+            },
         },
     },
     plugins: [],
