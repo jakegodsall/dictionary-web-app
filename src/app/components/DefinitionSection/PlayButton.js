@@ -14,7 +14,7 @@ const PlayButton = ({ audioRef }) => {
             width='48px'
             height='48px'
             alt='play button'
-            className='w-[4.8rem] h-[4.8rem] cursor-pointer duration-200 hover:opacity-75 hover:transition-opacity hover:duration-200'
+            className='w-[4.8rem] h-[4.8rem] cursor-pointer duration-200 hover:opacity-75 hover:transition-opacity hover:duration-200 dark:hover:opacity-100 dark:hover:brightness-150'
             onClick={playAudio}
         />
     );

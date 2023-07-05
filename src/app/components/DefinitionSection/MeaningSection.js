@@ -58,7 +58,7 @@ const MeaningSection = ({ meaning }) => {
             </ul>
             {synonyms.length > 0 && (
                 <div className='flex gap-10 text-[2rem]'>
-                    <p className=''>Synonyms</p>
+                    <p className='dark:text-secondary'>Synonyms</p>
                     <ul className='flex items-center gap-4'>
                         {synonyms.map((synonym, idx) => {
                             return (
@@ -72,7 +72,7 @@ const MeaningSection = ({ meaning }) => {
             )}
             {antonyms.length > 0 && (
                 <div className='flex gap-10 text-[2rem]'>
-                    <p className=''>Antonyms</p>
+                    <p className='dark:text-secondary'>Antonyms</p>
                     <ul className='flex items-center gap-4'>
                         {antonyms.map((antonym, idx) => {
                             return (

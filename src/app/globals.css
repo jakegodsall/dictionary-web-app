@@ -18,7 +18,7 @@ html {
 .dark {
     --color-text-primary: #fff;
     --color-text-secondary: #757575;
-    --color-text-accemt: #a445ed;
+    --color-text-accent: #a445ed;
     --color-bg-primary: #050505;
     --color-bg-secondary: #202020;
 }
