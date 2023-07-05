@@ -2,17 +2,21 @@ import Image from 'next/image';
 
 import PlayIcon from '../../../../public/images/icon-play.svg';
 
-const PlayButton = () => {
+const PlayButton = ({ audioRef }) => {
+    const playAudio = () => {
+        const audio = new Audio(audioRef);
+        audio.play();
+    };
+
     return (
-        <a>
-            <Image
-                src={PlayIcon}
-                width='48px'
-                height='48px'
-                alt='play button'
-                className='w-[4.8rem] h-[4.8rem] cursor-pointer duration-200 hover:opacity-75 hover:transition-opacity hover:duration-200'
-            />
-        </a>
+        <Image
+            src={PlayIcon}
+            width='48px'
+            height='48px'
+            alt='play button'
+            className='w-[4.8rem] h-[4.8rem] cursor-pointer duration-200 hover:opacity-75 hover:transition-opacity hover:duration-200'
+            onClick={playAudio}
+        />
     );
 };
 
