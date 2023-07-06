@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
@@ -27,15 +27,23 @@ export default function Home() {
     };
 
     return (
-        <div className='w-full h-full min-h-screen bg-primary text-primary font-primary sm:px-[4rem] md:max-w-[736px] mx-auto'>
-            <Header />
-            <main className=' mx-6 flex flex-col items-center'>
-                <SearchBar forwardData={apiDataHandler} />
-                <AnimatePresence>
-                    {!isInitial && isFound && <DefinitionSection data={apiData} />}
-                </AnimatePresence>
-                <AnimatePresence>{!isInitial && !isFound && <NotFound />}</AnimatePresence>
-            </main>
-        </div>
+        <AnimatePresence>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2 }}
+                className='w-full h-full min-h-screen bg-primary text-primary font-primary sm:px-[4rem] md:max-w-[736px] mx-auto'
+            >
+                <Header />
+                <main className=' mx-6 flex flex-col items-center'>
+                    <SearchBar forwardData={apiDataHandler} />
+                    <AnimatePresence>
+                        {!isInitial && isFound && <DefinitionSection data={apiData} />}
+                    </AnimatePresence>
+                    <AnimatePresence>{!isInitial && !isFound && <NotFound />}</AnimatePresence>
+                </main>
+            </motion.div>
+        </AnimatePresence>
     );
 }
